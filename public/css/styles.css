@@ -1,0 +1,178 @@
+
+
+ul, li, ol{
+  text-decoration: none;
+  list-style: none;
+  text-align: left;
+}
+
+
+
+
+
+
+body{
+  background-color: ##ffffff;
+  font-size: 10px;
+  background-image:url(../images/fondo.jpg);
+}
+
+#{
+font-family: 'Nunito', sans-serif;
+}
+
+.bg-transparent{
+background-color: transparent;
+}
+.logo{
+  font-size: 2em;
+}
+
+.nav-item a{
+  font-size: 2em;
+}
+
+.margen{
+  margin-top: 50px;
+  /* background-color: pink; */
+}
+
+.contenedor{
+  padding: 40px;
+  background-color:rgba(237, 246, 240, 0.05);
+}
+
+.barraTitulo{
+  font-family: 'Gaegu', cursive;
+  font-size: 3em;
+  color: #172017;
+  text-align: center;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.titulo{
+  padding-top: 80px;
+  padding-left: 40px;
+  font-size: 2em;
+  text-decoration: underline;
+}
+
+
+.card{
+margin: 10px;
+}
+
+h4.card-title{
+font-family: 'Do Hyeon', sans-serif;
+}
+
+div.card-body ul li{
+font-size: 1.8em;
+
+}
+.card-body p{
+  font-size: 1.7em;
+}
+
+.caja{
+  margin: 10px;
+  font-size: 2em;
+  background-color: #FFF;
+}
+
+/* Línea de las preguntas*/
+
+div[data-toggle="collapse"]{
+   border-bottom:1px solid #21aa70;
+   width:90%;
+   padding:30px;
+}
+
+.login{
+  margin-top: 90px;
+  font-size: 2em;
+}
+
+
+.footer {
+  margin-top: 30px;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  background-color: rgb(142, 170, 158);
+  color: #FFF;
+}
+
+.final{
+  background-color: rgb(4, 14, 5);
+  font-weight: bold;
+  color: #fff;
+  font-size: 1em;
+}
+
+
+.boton-preguntas{
+  cursor: pointer;
+}
+
+/*  */
+
+
+.product-item:hover {
+    box-shadow: 5px 5px rgba(234, 234, 234, 0.9);
+}
+
+.bg-green{
+background-color: #588f5a!important;
+
+}
+
+.ion-ios-search-strong{
+  color: white;
+}
+
+.alling{
+text-align: center;
+justify-content: center;
+
+}
+
+.borcua{
+border: solid 1px, #26882d;
+
+}
+
+.oelem{
+display: none;
+
+}
+
+.active{
+color:#2f3d24;
+
+}
+
+
+<<<<<<< HEAD
+
+
+.container final {
+  background-color: #588f5a;
+}
+
+
+=======
+
+h1,h2,h3,h4,h5,.lead,div[data-toggle="collapse"]{
+    font-family: 'Oswald', sans-serif;
+    font-size: 2em;
+}
+
+
+}
+
+.texto-bienvenida{
+font-size: 2em;
+color: #172017;
+
+}

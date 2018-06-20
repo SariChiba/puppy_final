@@ -25,6 +25,15 @@ Route::get('/productos', function() {
   return view('productos');
 })->name('prod');
 
+//Route::get('/registracion,'HomeController@index')
+
+//Route::get('/login', function() {
+//  return view('login');
+//})->name('login');
+
+//Route::get('/register', function() {
+//  return view('register');
+//})->name('register');
 
 
 // Route::get('/', function () {

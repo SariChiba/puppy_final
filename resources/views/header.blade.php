@@ -22,8 +22,12 @@
             <a class="nav-link py-1 px-0 px-lg-1 ion-ios-paw-outline" href="{{ route('faq') }}">Preguntas Frecuentes</a>
           </li>
           <li class="nav-item mx-1 mx-lg-1 active d-flex justify-content">
-
           </li>
+          <li class="nav-item mx-1 mx-lg-1 active d-flex justify-content">
+            <a class="nav-link py-1 px-0 px-lg-1 borcua navbar-brand ion-ios-paw-outline" href=""> Nombre </a>
+            <a class="nav-link py-1 px-0 px-lg-1 borcua navbar-brand ion-ios-paw-outline" href="{{ route('register') }}">Registrate / Iniciar Sesión <span class="sr-only">(current)</span></a>
+          </li>
+
         </ul>
 
         <!-- <form class="form-inline mt-2 mt-md-0 d-flex justify-content">

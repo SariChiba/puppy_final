@@ -25,6 +25,8 @@ Route::get('/productos', function() {
   return view('productos');
 })->name('prod');
 
+Auth::routes();
+
 //Route::get('/registracion,'HomeController@index')
 
 //Route::get('/login', function() {
@@ -40,7 +42,5 @@ Route::get('/productos', function() {
 //    return view('welcome');
 // });
 
-//
-//Auth::routes();
 
 //Route::get('/home', 'HomeController@index')->name('home');

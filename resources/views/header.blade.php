@@ -24,8 +24,8 @@
           <li class="nav-item mx-1 mx-lg-1 active d-flex justify-content">
           </li>
           <li class="nav-item mx-1 mx-lg-1 active d-flex justify-content">
-            <a class="nav-link py-1 px-0 px-lg-1 borcua navbar-brand ion-ios-paw-outline" href=""> Nombre </a>
-            <a class="nav-link py-1 px-0 px-lg-1 borcua navbar-brand ion-ios-paw-outline" href="{{ route('register') }}">Registrate / Iniciar Sesión <span class="sr-only">(current)</span></a>
+
+            <a class="nav-link py-1 px-0 px-lg-1 borcua navbar-brand ion-ios-paw-outline" href="/register">Registrate / Iniciar Sesión <span class="sr-only">(current)</span></a>
           </li>
 
         </ul>

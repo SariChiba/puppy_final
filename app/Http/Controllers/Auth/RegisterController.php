@@ -28,7 +28,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -48,15 +48,19 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
+      // dd($data);
         return Validator::make($data, [
             'name' => 'required|string|max:255',
             'lastname' => 'required|string|max:255',
             'phone' => 'required|numeric',
-            'adress' => 'required|string|max:255',
+            'address' => 'required|string|max:255',
+            'country' => 'required',
+            'regiones' => 'required',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
             'avatar' => 'required | mimes:jpeg,jpg,png | max:1000',
         ]);
+
     }
 
     /**
@@ -67,10 +71,32 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        // dd($data);
+        $file = $data['avatar'];
+        $imageName = $data['name'] . "_" . $data['lastname'] . "." . $file->extension();
+        $file->storePubliclyAs("/public/avatars", $imageName);
+
         return User::create([
             'name' => $data['name'],
+            'lastname' => $data['lastname'],
+            'phone' => $data['phone'],
+            'address' => $data['address'],
+            'country' => $data['country'],
+            'regiones' => $data['regiones'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'avatar' => $imageName
         ]);
     }
+
+    public function store(Request $request) {
+      $user = $request->user();
+      $file = $request->file("avatar");
+      $name = $user->email . "." . $file->extension();
+      $folder = "avatars";
+      $path = $file->storePubliclyAs($folder, $name);
+      $user->avatar = $path;
+      $user->save();
+    }
+
 }

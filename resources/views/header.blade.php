@@ -13,22 +13,69 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item mx-1 mx-lg-1">
-            <a class="nav-link py-1 px-0 px-lg-1 ion-ios-paw-outline" href="{{ route('prod') }}">Productos</a>
+            @guest
+            <a class="nav-link py-1 px-0 px-lg-1 ion-ios-paw-outline" href="{{ route('categ') }}">Categorias</a>
           </li>
           <li class="nav-item mx-1 mx-lg-1">
             <a class="nav-link py-1 px-0 px-lg-1 ion-ios-paw-outline" href="{{ route('suc') }}">Sucursales</a>
           </li>
           <li class="nav-item mx-1 mx-lg-1">
-            <a class="nav-link py-1 px-0 px-lg-1 ion-ios-paw-outline" href="{{ route('faq') }}">Preguntas Frecuentes</a>
+            <a class="nav-link py-1 px-0 px-lg-1 ion-ios-paw-outline" href="{{ route('faq') }}">FAQ</a>
           </li>
           <li class="nav-item mx-1 mx-lg-1 active d-flex justify-content">
           </li>
           <li class="nav-item mx-1 mx-lg-1 active d-flex justify-content">
+            {{-- @guest --}}
+              <a class="nav-link py-1 px-0 px-lg-1 borcua navbar-brand ion-ios-paw-outline" href="/register">Registrate<span class="sr-only">(current)</span></a>
+              <a class="nav-link py-1 px-0 px-lg-1 borcua navbar-brand ion-ios-paw-outline" href="/login"> Iniciar Sesión <span class="sr-only">(current)</span></a>
+            @else
+                {{-- <a class="nav-link py-1 px-0 px-lg-1 ion-ios-paw-outline" href="{{ route('Pdto') }}">Productos</a> --}}
+                <div class="input-group">
+                  <a class="nav-link py-1 px-0 px-lg-1 borcua navbar-brand ion-ios-paw-outline"  data-toggle="dropdown">Productos</a>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" style="font-size: 1em" href="{{ route('createPdto') }}">Agregar Productos</a>
+                    <a class="dropdown-item" style="font-size: 1em" href="/productos">Editar Productos</a>
+                  </div>
+                </div>
+              </li>
+              <li class="nav-item mx-1 mx-lg-1">
+              <a class="nav-link py-1 px-0 px-lg-1 ion-ios-paw-outline" href="{{ route('categ') }}">Categorias</a>
+              {{-- <div class="input-group">
+                <a class="nav-link py-1 px-0 px-lg-1 borcua navbar-brand ion-ios-paw-outline"  data-toggle="dropdown">Categorías</a>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="#">Agregar Productos</a>
+                  <a class="dropdown-item" href="#">Editar Productos</a>
+                </div>
+              </div> --}}
+            </li>
+            <li class="nav-item mx-1 mx-lg-1">
+              <a class="nav-link py-1 px-0 px-lg-1 ion-ios-paw-outline" href="{{ route('suc') }}">Sucursales</a>
+            </li>
+            <li class="nav-item mx-1 mx-lg-1">
+              <a class="nav-link py-1 px-0 px-lg-1 ion-ios-paw-outline" href="{{ route('faq') }}">FAQ</a>
+            </li>
+            <li class="nav-item mx-1 mx-lg-1 active d-flex justify-content">
+            </li>
+            <li class="nav-item mx-1 mx-lg-1 active d-flex justify-content"
 
-            <a class="nav-link py-1 px-0 px-lg-1 borcua navbar-brand ion-ios-paw-outline" href="/register">Registrate / Iniciar Sesión <span class="sr-only">(current)</span></a>
+            >
+
+              <div class="py-1 px-1">
+                {{-- {{ Auth::user()->name }} {{ Auth::user()->lastname }} --}}
+                <img class="img-rounded" src="/storage/avatars/{{ Auth::user()->avatar }}" width="50">
+              </div>
+
+              <form action={{ route('logout') }} method="post">
+                @csrf
+                <button class="btn btn-success" type="submit">Cerrar Sesión</button>
+              </form>
+            @endguest
+
           </li>
 
         </ul>
+
+
 
         <!-- <form class="form-inline mt-2 mt-md-0 d-flex justify-content">
           <input class="form-control mr-sm-2" type="text" placeholder="Busca tu producto! " aria-label="Search">

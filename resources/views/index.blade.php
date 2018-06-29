@@ -24,6 +24,12 @@
   </div>
 </div>
 
+{{-- @if (Auth::user())
+  <h2> {{ Auth::user()->name }} {{ Auth::user()->lastname }} </h2>
+  <img src="/storage/avatars/{{ Auth::user()->avatar }}" alt="">
+@endif --}}
+
+
 @section('content')
 <div class="contenedor">
   <div class="barraTitulo">

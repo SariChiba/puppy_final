@@ -12,6 +12,8 @@
       <link href="https://fonts.googleapis.com/css?family=Gaegu" rel="stylesheet">
       {{-- <link rel="stylesheet" href="/css/styles.css"> --}}
       <link rel="stylesheet"href="{{ asset('css/styles.css') }}">
+      <link rel="stylesheet"href="" id="linkTemaCss">
+       <script src="{{ asset('js/validate.js') }}" defer></script>
 </head>
 
 <body>
@@ -20,7 +22,12 @@
     <div class="container">
       @yield('content')
     </div>
-
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
      @include ('footer')
 
       <!-- Jquery -->

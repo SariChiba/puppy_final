@@ -50,7 +50,7 @@
                         <div class="form-group row">
                             <div class="col-md-6 offset-md-4">
                                 <div class="checkbox">
-                                    <label>
+                                    <label style="font-size:1.5em">
                                         <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> {{ __('Recordáme') }}
                                     </label>
                                 </div>
@@ -62,7 +62,7 @@
                                 <button type="submit" class="btn btn-primary" style="BORDER:rgb(142, 170, 158); background-color:rgb(142, 170, 158);font-family: 'Nunito';font-size: 2em">
                                     {{ __('Login') }}
                                 </button>
-
+                                
                                 <a class="btn btn-link" style= "color:#656667" href="{{ route('password.request') }}">
                                     {{ __('¿Olvidaste tu contraseña?') }}
                                 </a>

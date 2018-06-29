@@ -21,21 +21,39 @@ Route::get('/sucursales', function() {
   return view('sucursales');
 })->name('suc');
 
-Route::get('/productos', function() {
-  return view('productos');
-})->name('prod');
+// Route::get('/categorias', function() {
+//   return view('categorias');
+// })->name('categ');
+
+Route::get('/categorias','CategoryController@index')->name('categ');
+
+Route::get('/categorias/{id}','CategoryController@traerProductos');
+
+Route::get('/crearProducto','ProductController@showAddProduct')->name('createPdto')->middleware('auth');
+
+Route::post('/crearProducto','ProductController@createProduct');
+
+Route::get('/productos','ProductController@showProduct')->name('Pdto')->middleware('auth');
+
+Route::get('/producto/{id}','ProductController@showEditProduct')->middleware('auth');
+
+Route::put('/producto/{id}','ProductController@edit');
+
+Route::delete('/producto/delete/{id}','ProductController@borrar')->middleware('auth');
 
 Auth::routes();
 
+// Route::get('perfil/{id}','PerfilController@update');
+
 //Route::get('/registracion,'HomeController@index')
 
-//Route::get('/login', function() {
+// Route::get('/login', function() {
 //  return view('login');
-//})->name('login');
-
-//Route::get('/register', function() {
+// })->name('login');
+//
+// Route::get('/register', function() {
 //  return view('register');
-//})->name('register');
+// })->name('register');
 
 
 // Route::get('/', function () {
